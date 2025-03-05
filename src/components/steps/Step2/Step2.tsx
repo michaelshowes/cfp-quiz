@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import { AnimatePresence, motion } from 'motion/react';
+
 import LocationSearch from '@/components/LocationSearch';
 import Radios from '@/components/Radios';
 
@@ -11,8 +13,6 @@ export default function Step2() {
   const { title, subtitle, options, locationSearchLabel } = step2Config;
   const locationOption = step2Config.options[0].text;
   const showLocationSearch = selectedOption === locationOption;
-
-  console.log(selectedOption);
 
   return (
     <div className={'pb-16'}>
@@ -26,7 +26,19 @@ export default function Step2() {
           options={options}
           setSelectedOption={setSelectedOption}
         />
-        {showLocationSearch && <LocationSearch label={locationSearchLabel} />}
+        <AnimatePresence>
+          {showLocationSearch && (
+            <motion.div
+              key={'location-search'}
+              initial={{ opacity: 0, translateY: 20 }}
+              animate={{ opacity: 1, translateY: 0 }}
+              transition={{ duration: 0.2 }}
+              exit={{ opacity: 0, translateY: -20 }}
+            >
+              <LocationSearch label={locationSearchLabel} />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );

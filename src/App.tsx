@@ -17,7 +17,7 @@ export default function App() {
   };
 
   return (
-    <div className={'mx-auto w-full max-w-[950px]'}>
+    <div className={'relative mx-auto w-full max-w-[950px]'}>
       <ProgressIndicator currentStep={currentStep} />
       {stepConfig.map(({ step, component }) => (
         <AnimateStep

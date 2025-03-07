@@ -1,5 +1,8 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
+import { stepCount } from '@/config';
+import { cn } from '@/lib/utils';
+
 type NavigationProps = {
   step: number;
   next: () => void;
@@ -7,6 +10,8 @@ type NavigationProps = {
 };
 
 export default function Navigation({ step, prev, next }: NavigationProps) {
+  const lastStep = step > stepCount - 1;
+
   return (
     <div className={'flex items-center justify-between bg-gray-100'}>
       {step > 2 && (
@@ -22,12 +27,15 @@ export default function Navigation({ step, prev, next }: NavigationProps) {
       )}
 
       <button
-        className={
-          'bg-yellow ml-auto flex w-[146px] items-center justify-center gap-2 px-6 py-2.5 font-bold transition-all hover:bg-black hover:text-white'
-        }
+        className={cn(
+          'bg-yellow ml-auto flex min-w-[146px] items-center justify-center gap-2 px-6 py-2.5 font-bold transition-all hover:bg-black hover:text-white',
+          {
+            'pointer-events-none cursor-not-allowed': lastStep
+          }
+        )}
         onClick={next}
       >
-        Next
+        {lastStep ? 'Find Your Matches' : 'Next'}
         <ChevronRight className={'stroke-3'} />
       </button>
     </div>

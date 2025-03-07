@@ -1,10 +1,12 @@
+export type Step5Option = {
+  id: string;
+  text: string;
+};
+
 export type Step5Config = {
   title: string;
   subtitle?: string;
-  options: {
-    id: string;
-    text: string;
-  }[];
+  options: Step5Option[];
 };
 
 export const step5Config: Step5Config = {

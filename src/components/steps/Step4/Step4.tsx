@@ -9,6 +9,8 @@ export default function Step4() {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const { title, subtitle, options } = step4Config;
 
+  console.log(selectedOption);
+
   return (
     <div className={'pb-16'}>
       <StepHeader

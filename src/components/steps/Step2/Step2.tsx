@@ -14,6 +14,8 @@ export default function Step2() {
   const locationOption = step2Config.options[0].text;
   const showLocationSearch = selectedOption === locationOption;
 
+  console.log(selectedOption);
+
   return (
     <div className={'pb-16'}>
       <StepHeader

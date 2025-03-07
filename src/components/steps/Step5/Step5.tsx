@@ -10,6 +10,8 @@ export default function Step5() {
   const [selectedOptions, setSelectedOptions] = useState<string[] | null>(null);
   const { title, subtitle } = step5Config;
 
+  console.log(selectedOptions);
+
   return (
     <div className={'pb-16'}>
       <StepHeader
@@ -18,7 +20,10 @@ export default function Step5() {
       />
 
       <div className={'pt-12'}>
-        <Checkboxes options={step5Config.options} />
+        <Checkboxes
+          options={step5Config.options}
+          setSelectedOptions={setSelectedOptions}
+        />
       </div>
       <div className={'border-t-border mt-7 border-t pt-7'}>
         <div className='flex items-center gap-4'>

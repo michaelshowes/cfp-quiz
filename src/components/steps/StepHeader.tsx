@@ -9,7 +9,7 @@ export default function StepHeader({
     <div
       className={'border-border flex flex-col gap-4 border-b py-8 text-black'}
     >
-      <h2 className={'text-xl font-bold'}>{title}</h2>
+      <h2 className={'text-2xl font-bold'}>{title}</h2>
       <p>{subtitle}</p>
     </div>
   );

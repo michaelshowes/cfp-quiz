@@ -1,18 +1,26 @@
 import { Label } from './ui/label';
 import { RadioGroup, RadioGroupItem } from './ui/radio-group';
 
-export default function Radios({
-  options,
-  setSelectedOption
-}: {
+type RadioProps = {
   options: { id: string; text: string }[];
   setSelectedOption: (option: string) => void;
-}) {
+  className?: string;
+  defaultValue?: string | undefined;
+};
+
+export default function Radios({
+  options,
+  setSelectedOption,
+  className,
+  defaultValue = undefined
+}: RadioProps) {
   return (
     <RadioGroup
       onValueChange={(value) => {
         setSelectedOption(value);
       }}
+      defaultValue={defaultValue}
+      className={className}
     >
       {options.map(({ id, text }) => (
         <div

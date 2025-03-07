@@ -1,1 +1,1 @@
-export const stepCount = 8;
+export const stepCount = 5;

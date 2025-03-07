@@ -3,11 +3,11 @@ import { useState } from 'react';
 import Radios from '@/components/Radios';
 
 import StepHeader from '../StepHeader';
-import { step1Config } from './step1.config';
+import { step4Config } from './step4.config';
 
-export default function Step1() {
+export default function Step4() {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
-  const { title, subtitle, options } = step1Config;
+  const { title, subtitle, options } = step4Config;
 
   return (
     <div className={'pb-16'}>

@@ -60,7 +60,7 @@ export default function LocationSearch({ label }: { label?: string }) {
     >
       <div className={'flex flex-col gap-4'}>
         <div className={'flex items-center justify-between'}>
-          <h3 className={'text-lg font-bold'}>{label}</h3>
+          <h3 className={'text-xl font-bold'}>{label}</h3>
           <button
             onClick={handleUseCurrentLocation}
             className={'flex items-center gap-1 text-sm font-bold underline'}
@@ -88,7 +88,7 @@ export default function LocationSearch({ label }: { label?: string }) {
       </div>
 
       <div className={'flex flex-col gap-4'}>
-        <h3 className={'text-lg font-bold'}>Preferred local distance</h3>
+        <h3 className={'text-xl font-bold'}>Preferred local distance</h3>
         <Select defaultValue={'5'}>
           <SelectTrigger className='w-[180px]'>
             <SelectValue />

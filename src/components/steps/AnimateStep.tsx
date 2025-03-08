@@ -14,8 +14,8 @@ export default function AnimateStep({
       <motion.div
         key={currentStep}
         className={'w-full'}
-        initial={{ opacity: 0, translateX: -40, position: 'absolute' }}
-        animate={{ opacity: 1, translateX: 0, position: 'static' }}
+        initial={{ opacity: 0, position: 'absolute' }}
+        animate={{ opacity: 1, position: 'static' }}
         exit={{ opacity: 0, position: 'absolute' }}
       >
         {children}

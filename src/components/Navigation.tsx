@@ -1,7 +1,6 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 import { stepCount } from '@/config';
-import { cn } from '@/lib/utils';
 
 type NavigationProps = {
   step: number;
@@ -27,12 +26,9 @@ export default function Navigation({ step, prev, next }: NavigationProps) {
       )}
 
       <button
-        className={cn(
-          'bg-yellow ml-auto flex min-w-[146px] items-center justify-center gap-2 px-6 py-2.5 font-bold transition-all hover:bg-black hover:text-white',
-          {
-            'pointer-events-none cursor-not-allowed': lastStep
-          }
-        )}
+        className={
+          'bg-yellow ml-auto flex min-w-[146px] items-center justify-center gap-2 px-6 py-2.5 font-bold transition-all hover:bg-black hover:text-white'
+        }
         onClick={next}
       >
         {lastStep ? 'Find Your Matches' : 'Next'}

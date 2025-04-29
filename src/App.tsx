@@ -1,5 +1,6 @@
 import { Fragment, useEffect, useRef } from 'react';
 
+import Completed from './components/Completed';
 import Navigation from './components/Navigation';
 import ProgressIndicator from './components/ProgressIndicator';
 import AnimateStep from './components/steps/AnimateStep';
@@ -19,8 +20,6 @@ export default function App() {
   const handlePreviousStep = () => {
     setCurrentStep((prev) => prev - 1);
   };
-
-  console.log(store);
 
   useEffect(() => {
     const pacContainer = document.querySelector('.pac-container');
@@ -82,20 +81,7 @@ export default function App() {
               </div>
             </div>
           ) : (
-            <div
-              className={
-                'flex h-dvh w-full flex-col items-center justify-center px-4'
-              }
-            >
-              <object
-                data='/puzzle.svg'
-                type='image/svg+xml'
-                className={'size-[174px]'}
-              ></object>
-              <div className={'text-center text-2xl font-bold'}>
-                Finding Your Matches...
-              </div>
-            </div>
+            <Completed />
           )}
         </div>
       </div>

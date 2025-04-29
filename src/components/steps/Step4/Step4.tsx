@@ -1,27 +1,29 @@
-import { useState } from 'react';
+import { useRef } from 'react';
 
 import Radios from '@/components/Radios';
+import { setStepFourAnswer } from '@/store';
 
 import StepHeader from '../StepHeader';
 import { step4Config } from './step4.config';
 
 export default function Step4() {
-  const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const { title, subtitle, options } = step4Config;
 
-  console.log(selectedOption);
-
   return (
-    <div className={'pb-16'}>
+    <div
+      className={'pb-16'}
+      ref={ref}
+    >
       <StepHeader
         title={title}
         subtitle={subtitle}
       />
 
-      <div className={'pt-12'}>
+      <div className={'max-md:pt-8'}>
         <Radios
           options={options}
-          setSelectedOption={setSelectedOption}
+          setSelectedOption={setStepFourAnswer}
         />
       </div>
     </div>

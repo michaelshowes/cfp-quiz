@@ -6,10 +6,16 @@ export default function Checkboxes({
   setSelectedOptions
 }: {
   options: Step5Config['options'];
-  setSelectedOptions: (value: string[]) => void;
+  setSelectedOptions: (
+    value: string[] | ((prev: string[]) => string[])
+  ) => void;
 }) {
   return (
-    <div className={'grid grid-cols-[auto_auto] gap-x-12 gap-y-7'}>
+    <div
+      className={
+        'flex grid-cols-[auto_auto] flex-col gap-x-6 gap-y-4 md:grid md:gap-y-7 lg:gap-x-12'
+      }
+    >
       {options.map(({ id, text }) => (
         <div
           key={id}
@@ -20,22 +26,17 @@ export default function Checkboxes({
             className={'border-blue size-4.5 rounded-none'}
             onCheckedChange={(checked) => {
               if (checked) {
-                /* @ts-expect-error fix later */
-                setSelectedOptions((prev) => {
-                  if (!prev) {
-                    return [text];
-                  }
-
-                  return [...prev, text];
+                setSelectedOptions((prev: string[]) => {
+                  const newAnswers = !prev ? [text] : [...prev, text];
+                  return newAnswers;
                 });
               } else {
-                /* @ts-expect-error fix later */
-                setSelectedOptions((prev) => {
-                  if (!prev) {
-                    return [];
-                  }
-
-                  return prev.filter((option: string) => option !== text);
+                setSelectedOptions((prev: string[]) => {
+                  if (!prev) return [];
+                  const newAnswers = prev.filter(
+                    (option: string) => option !== text
+                  );
+                  return newAnswers;
                 });
               }
             }}

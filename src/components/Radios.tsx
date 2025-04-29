@@ -1,3 +1,5 @@
+import { cn } from '@/lib/utils';
+
 import { Label } from './ui/label';
 import { RadioGroup, RadioGroupItem } from './ui/radio-group';
 
@@ -20,7 +22,7 @@ export default function Radios({
         setSelectedOption(value);
       }}
       defaultValue={defaultValue}
-      className={className}
+      className={cn('gap-4 md:gap-7', className)}
     >
       {options.map(({ id, text }) => (
         <div

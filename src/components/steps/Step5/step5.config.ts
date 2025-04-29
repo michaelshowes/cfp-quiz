@@ -7,6 +7,7 @@ export type Step5Config = {
   title: string;
   subtitle?: string;
   options: Step5Option[];
+  termsAndConditionsUrl: string;
 };
 
 export const step5Config: Step5Config = {
@@ -50,5 +51,6 @@ export const step5Config: Step5Config = {
       id: 'step-5-9',
       text: 'Special Needs Individuals'
     }
-  ]
+  ],
+  termsAndConditionsUrl: '#'
 };

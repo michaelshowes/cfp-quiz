@@ -1,35 +1,36 @@
-import { JSX } from 'react';
+import { lazy } from 'react';
 
-import Step1 from './Step1/Step1';
-import Step2 from './Step2/Step2';
-import Step3 from './Step3/Step3';
-import Step4 from './Step4/Step4';
-import Step5 from './Step5/Step5';
+const Step1 = lazy(() => import('./Step1/Step1'));
+const Step2 = lazy(() => import('./Step2/Step2'));
+const Step3 = lazy(() => import('./Step3/Step3'));
+const Step4 = lazy(() => import('./Step4/Step4'));
+const Step5 = lazy(() => import('./Step5/Step5'));
 
 type StepConfig = {
   step: number;
-  component: JSX.Element;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  component: React.ComponentType<any>;
 };
 
 export const stepConfig: StepConfig[] = [
   {
     step: 1,
-    component: <Step1 />
+    component: Step1
   },
   {
     step: 2,
-    component: <Step2 />
+    component: Step2
   },
   {
     step: 3,
-    component: <Step3 />
+    component: Step3
   },
   {
     step: 4,
-    component: <Step4 />
+    component: Step4
   },
   {
     step: 5,
-    component: <Step5 />
+    component: Step5
   }
 ];

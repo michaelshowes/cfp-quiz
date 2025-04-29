@@ -6,11 +6,13 @@ export default function StepHeader({
   subtitle?: string;
 }) {
   return (
-    <div
-      className={'border-border flex flex-col gap-4 border-b py-8 text-black'}
-    >
-      <h2 className={'text-2xl font-bold'}>{title}</h2>
-      <p>{subtitle}</p>
+    <div className={'md:py-8'}>
+      <div
+        className={'border-border flex flex-col gap-4 border-b py-6 text-black'}
+      >
+        <h2 className={'text-base font-bold md:text-2xl'}>{title}</h2>
+        <p>{subtitle}</p>
+      </div>
     </div>
   );
 }

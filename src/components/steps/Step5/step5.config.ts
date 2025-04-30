@@ -37,7 +37,7 @@ export const step5Config: Step5Config = {
     },
     {
       id: 'step-5-6',
-      text: 'Windows/Widowers'
+      text: 'Widows/Widowers'
     },
     {
       id: 'step-5-7',
